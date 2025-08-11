@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FashionHub Kenya - AI Fashion Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">🛍️</div>
+                <div class="brand-info">
+                    <h1>FashionHub Kenya</h1>
+                    <p>Your AI Fashion Assistant - Msaidizi wako wa Fashoni</p>
+                </div>
+            </div>
+            
+            <div class="header-controls">
+                <button class="language-toggle" onclick="toggleLanguage()">
+                    🌍 <span id="langText">EN/SW</span>
+                </button>
+                
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Online</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-bubble">
+                        <div class="message-content">
+                            Jambo! Karibu to FashionHub Kenya! 🇰🇪 I'm your fashion assistant. How can I help you find the perfect outfit today?
+                        </div>
+                        <div class="message-time">AI Assistant • now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="typing-bubble">
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Replies & Input -->
+            <div class="quick-replies">
+                <div class="quick-replies-grid">
+                    <button class="quick-reply-btn" onclick="sendQuickReply('Show me your products')">
+                        🛍️ Show Products
+                    </button>
+                    <button class="quick-reply-btn" onclick="sendQuickReply('How can I pay with M-Pesa?')">
+                        💳 M-Pesa Payment
+                    </button>
+                    <button class="quick-reply-btn" onclick="sendQuickReply('I need help with sizing')">
+                        📏 Size Guide
+                    </button>
+                    <button class="quick-reply-btn" onclick="sendQuickReply('Tell me about delivery')">
+                        📦 Delivery Info
+                    </button>
+                    <button class="quick-reply-btn" onclick="sendQuickReply('Where is your store located?')">
+                        📍 Store Location
+                    </button>
+                    <button class="quick-reply-btn" onclick="sendQuickReply('Show me traditional wear')">
+                        🌍 Traditional Wear
+                    </button>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <div class="input-wrapper">
+                        <textarea 
+                            class="message-input" 
+                            id="messageInput" 
+                            placeholder="Type your message... / Andika ujumbe wako..."
+                            rows="1"
+                        ></textarea>
+                    </div>
+                    <button class="send-button" id="sendButton" onclick="sendMessage()">
+                        ➤
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="info-cards">
+            <div class="info-card orange">
+                <div class="card-header">
+                    <span class="card-icon">🕒</span>
+                    <h3 class="card-title">Store Hours</h3>
+                </div>
+                <div class="card-content">
+                    Monday - Saturday: 8:00 AM - 7:00 PM<br>
+                    Sunday: Closed<br>
+                    Online Support: 24/7
+                </div>
+            </div>
+
+            <div class="info-card green">
+                <div class="card-header">
+                    <span class="card-icon">📍</span>
+                    <h3 class="card-title">Location</h3>
+                </div>
+                <div class="card-content">
+                    Tom Mboya Street, Nairobi CBD<br>
+                    Near Kencom House<br>
+                    Ground Floor, Blue Building
+                </div>
+            </div>
+
+            <div class="info-card blue">
+                <div class="card-header">
+                    <span class="card-icon">⭐</span>
+                    <h3 class="card-title">Customer Rating</h3>
+                </div>
+                <div class="card-content">
+                    ⭐⭐⭐⭐⭐ 4.8/5<br>
+                    Based on 500+ reviews<br>
+                    Excellent customer service
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Banner -->
+        <div class="features-banner">
+            <h2 class="features-title">Why Choose FashionHub Kenya?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-icon">💳</span>
+                    <div class="feature-text">M-Pesa Ready<br>Instant Payments</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🚚</span>
+                    <div class="feature-text">Fast Delivery<br>Across Kenya</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">📏</span>
+                    <div class="feature-text">Perfect Fit<br>Free Alterations</div>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">⭐</span>
+                    <div class="feature-text">Quality Assured<br>Best Materials</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
